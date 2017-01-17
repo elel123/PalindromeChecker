@@ -18,9 +18,14 @@ public boolean palindrome(String word)
 {
   //your code here
   String reversed = reverse(word);
+  System.out.println(reversed + " " + word);
   noSpaces(reversed);
-  noCapitals(reversed);
+  noSpaces(word);
+  System.out.println(reversed + " " + word);
   textOnly(reversed);
+  textOnly(word);
+  System.out.println(reversed + " " + word);
+
   if(word.equals(reversed))
     return true;
   else
@@ -32,7 +37,7 @@ public String reverse(String sWord)
   String theReverse = new String();
   for(int i = sWord.length() - 1; i >= 0; i--)
     theReverse = theReverse + sWord.substring(i, i + 1);
-  println(theReverse);
+  //println(theReverse);
   return theReverse;
   
 }
@@ -44,30 +49,30 @@ public String noSpaces(String sWord){
      if(sWord.charAt(i) != ' ')
       noMoreSpaces = noMoreSpaces + sWord.substring(i, i + 1);
    }
-   println(noMoreSpaces);
+   //println(noMoreSpaces);
    return noMoreSpaces;
    
 }
-
+/*
 public String noCapitals(String sWord){
   String lowerCase = new String();
   for(int i = 0; i < sWord.length(); i++)
   {
-    lowerCase = lowerCase + sWord.substring(i, i + 1).toLowerCase();
+    lowerCase = lowerCase + sWord.substring(i, i + 1);
   }
   println(lowerCase);
   return lowerCase;
   
 }
-
+*/
 public String textOnly(String sWord) {
   String text = new String();
   for(int i = 0; i < sWord.length(); i++)
   {
     if(Character.isLetter(sWord.charAt(i)) == true)
-    text = text + sWord.substring(i, i + 1);
+    text = text + sWord.substring(i, i + 1).toLowerCase();
   }
-  println(text);
+  //println(text);
   return text;
   
 }
