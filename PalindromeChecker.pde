@@ -17,16 +17,9 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
-  String reversed = reverse(word);
-  System.out.println(reversed + " " + word);
-  noSpaces(reversed);
-  noSpaces(word);
-  System.out.println(reversed + " " + word);
-  textOnly(reversed);
-  textOnly(word);
-  System.out.println(reversed + " " + word);
-
-  if(word.equals(reversed))
+  String reversed = textOnly(reverse(word));
+  String main = textOnly(word);
+  if(main.equals(reversed))
     return true;
   else
     return false;
